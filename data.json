@@ -1,0 +1,25 @@
+{   "code": "7S03II28",
+    "lang": "BN",
+    "titleBN": "সঠিক নাম শনাক্তকরণ",
+    "titleEN": "Identification of correct name",
+    "bgImage": {
+        "src": "images/bg_scene.jpg",
+        "altBN": "",
+        "altEN": "",
+        "scale": 0.5,
+        "name": "bg_scene"
+    },
+
+    "answerSet":[
+        {
+            "id": 1,
+            "innerContentBN": "",
+            "innerContentEN": "",
+            "x": 1388,
+            "y": 727,
+            "scale": 1,
+            "rotation": 0
+        }
+    ]
+
+}
