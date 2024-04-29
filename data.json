@@ -1,25 +1,116 @@
-{   "code": "7S03II28",
-    "lang": "BN",
-    "titleBN": "সঠিক নাম শনাক্তকরণ",
-    "titleEN": "Identification of correct name",
-    "bgImage": {
-        "src": "images/bg_scene.jpg",
-        "altBN": "",
-        "altEN": "",
-        "scale": 0.5,
-        "name": "bg_scene"
+{
+  "code": "7S03II28",
+  "lang": "BN",
+  "titleBN": "সঠিক নাম শনাক্তকরণ",
+  "titleEN": "Identification of correct name",
+  "bgImage": {
+    "src": "images/bg_scene.jpg",
+    "altBN": "",
+    "altEN": "",
+    "scale": 0.5,
+    "name": "bg_scene"
+  },
+  "padGap": 4,
+
+  "answerSet": [
+    {
+      "id": 1,
+
+      "padColor": "#FAF9F6",
+      "padHoverColor": "#EDEADE",
+      "padHoverTextColor": "black",
+      "padTextColor": "black",
+      "padShadowColor": "black",
+      "padBorderWidth": 0,
+      "padBorderColor": "black",
+      "innerContentBN": "বহিস্তর",
+      "innerContentEN": "Extensive Area"
     },
+    {
+      "id": 2,
 
-    "answerSet":[
-        {
-            "id": 1,
-            "innerContentBN": "",
-            "innerContentEN": "",
-            "x": 1388,
-            "y": 727,
-            "scale": 1,
-            "rotation": 0
-        }
-    ]
+      "padColor": "#FAF9F6",
+      "padHoverColor": "#EDEADE",
+      "padHoverTextColor": "black",
+      "padTextColor": "black",
+      "padShadowColor": "black",
+      "padBorderWidth": 0,
+      "padBorderColor": "black",
+      "innerContentBN": "অন্তস্তর",
+      "innerContentEN": "Intensive Area"
+    },
+    {
+      "id": 3,
 
+      "padColor": "#FAF9F6",
+      "padHoverColor": "#EDEADE",
+      "padHoverTextColor": "black",
+      "padTextColor": "black",
+      "padShadowColor": "black",
+      "padBorderWidth": 0,
+      "padBorderColor": "black",
+      "innerContentBN": "লুমেন",
+      "innerContentEN": "Lumen"
+    },
+    {
+      "id": 4,
+
+      "padColor": "#FAF9F6",
+      "padHoverColor": "#EDEADE",
+      "padHoverTextColor": "black",
+      "padTextColor": "black",
+      "padShadowColor": "black",
+      "padBorderWidth": 0,
+      "padBorderColor": "black",
+      "innerContentBN": "গ্রানাম",
+      "innerContentEN": "Granum"
+    },
+    {
+      "id": 5,
+
+      "padColor": "#FAF9F6",
+      "padHoverColor": "#EDEADE",
+      "padHoverTextColor": "black",
+      "padTextColor": "black",
+      "padShadowColor": "black",
+      "padBorderWidth": 0,
+      "padBorderColor": "black",
+      "innerContentBN": "স্ট্রোমা",
+      "innerContentEN": "Stroma"
+    },
+    {
+      "id": 6,
+
+      "padColor": "#FAF9F6",
+      "padHoverColor": "#EDEADE",
+      "padHoverTextColor": "black",
+      "padTextColor": "black",
+      "padShadowColor": "black",
+      "padBorderWidth": 0,
+      "padBorderColor": "black",
+      "innerContentBN": "থাইলাকয়েড",
+      "innerContentEN": "Thylakoid"
+    }
+  ],
+
+  "dropZone":[
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    }
+  ]
 }
