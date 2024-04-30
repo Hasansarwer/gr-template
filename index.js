@@ -16,6 +16,9 @@ new Frame(
 function ready() {
   let dropZones = []; // array to store dropZones id
 
+  let correctSound = new Audio("assets/sounds/correctSound.mp3");
+  let wrongSound = new Audio("assets/sounds/wrongSound.mp3");
+
   let navbar = () => {
     fetch("data.json")
       .then((response) => response.json())
@@ -120,6 +123,9 @@ function ready() {
             dropZones.forEach((dropZoneData) => {
               if (ansPad.hitTestRect(dropZoneData)) {
                 if (answer.id === dropZoneData.id) {
+                   
+                    correctSound.play();
+
                   ansPad.animate({
                     target: ansPad,
                     props: { x: dropZoneData.x, y: dropZoneData.y },
@@ -144,7 +150,7 @@ function ready() {
                 setTimeout(() => {
                     emitter.removeFrom(Frame.stage);
                     
-                }, 2000);
+                }, 1000);
                 } else {
                   ansPad.animate({
                     target: ansPad,
@@ -152,6 +158,7 @@ function ready() {
                     time: 0.5,
                     ease: "quadIn",
                   });
+                    wrongSound.play();
                 }
               }
             });
