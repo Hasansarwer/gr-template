@@ -57,10 +57,10 @@ function ready() {
                 //storing assigned id to dropZone
                 dropZone.id = dropZoneData.id;
             
-                let verticalGap = 50;
-                let yPos = -350 + index * (70 + verticalGap);
+                // let verticalGap = 50;
+                // let yPos = -350 + index * (70 + verticalGap);
             
-                dropZone.center().mov(600, yPos);
+                dropZone.center().mov(dropZoneData.x,dropZoneData.y); 
             
                 // Push each dropZone to the dropZones array
                 dropZones.push(dropZone);
@@ -85,21 +85,31 @@ function ready() {
 
                 ansPad.label.size = 20;
 
-                let verticalGap = 20 * data.padGap;
-                let yPos = -350 + index * (70 + verticalGap);
-
-                ansPad.center().mov(-600, yPos);
+                let verticalGap = 20 * data.padContainerVerticalPos;
+                let yPos = answer.padPosY+verticalGap;
+                ansPad.center().pos(100, yPos);
 
                 //checking which answer pad is dropped on which drop zone
                 ansPad.on("click", () => {
                     dropZones.forEach((dropZoneData) => {
                         if (ansPad.hitTestRect(dropZoneData)) {
                           if(answer.id === dropZoneData.id){
-                           console.log("Correct Answer");
+
+                            ansPad.animate({
+                                target: ansPad,
+                                props: { x: dropZoneData.x, y: dropZoneData.y},
+                                time: 0.5,
+                                ease: "quadIn",
+                            });
                           }
-                            else{
-                                console.log("Wrong Answer");
-                            }
+                          else{
+                            ansPad.animate({
+                                target: ansPad,
+                                props: { x: 100, y: yPos},
+                                time: 0.5,
+                                ease: "quadIn",
+                            });
+                          }
                         }
                     });
                 });
@@ -109,10 +119,6 @@ function ready() {
 };
 
     
-
-
-    
-
     navbar();
     createHittestLogic();
 

@@ -10,12 +10,12 @@
     "scale": 0.5,
     "name": "bg_scene"
   },
-  "padGap": 4,
+  "padContainerVerticalPos": 30,
 
   "answerSet": [
     {
       "id": 1,
-
+      "padPosY": -350,
       "padColor": "#FAF9F6",
       "padHoverColor": "#EDEADE",
       "padHoverTextColor": "black",
@@ -28,7 +28,7 @@
     },
     {
       "id": 2,
-
+      "padPosY": -250,
       "padColor": "#FAF9F6",
       "padHoverColor": "#EDEADE",
       "padHoverTextColor": "black",
@@ -41,7 +41,7 @@
     },
     {
       "id": 3,
-
+      "padPosY": -150,
       "padColor": "#FAF9F6",
       "padHoverColor": "#EDEADE",
       "padHoverTextColor": "black",
@@ -54,7 +54,7 @@
     },
     {
       "id": 4,
-
+      "padPosY": -50,
       "padColor": "#FAF9F6",
       "padHoverColor": "#EDEADE",
       "padHoverTextColor": "black",
@@ -67,7 +67,7 @@
     },
     {
       "id": 5,
-
+      "padPosY": 50,
       "padColor": "#FAF9F6",
       "padHoverColor": "#EDEADE",
       "padHoverTextColor": "black",
@@ -80,7 +80,7 @@
     },
     {
       "id": 6,
-
+      "padPosY": 150,
       "padColor": "#FAF9F6",
       "padHoverColor": "#EDEADE",
       "padHoverTextColor": "black",
@@ -95,22 +95,34 @@
 
   "dropZone":[
     {
-      "id": 1
+      "id": 1,
+      "x":600,
+      "y":-350
     },
     {
-      "id": 2
+      "id": 2,
+      "x":600,
+      "y":-250
     },
     {
-      "id": 3
+      "id": 3,
+      "x":600,
+      "y":-150
     },
     {
-      "id": 4
+      "id": 4,
+      "x":600,
+      "y":-50
     },
     {
-      "id": 5
+      "id": 5,
+      "x":600,
+      "y":50
     },
     {
-      "id": 6
+      "id": 6,
+      "x":600,
+      "y":150
     }
   ]
 }
