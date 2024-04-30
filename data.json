@@ -3,12 +3,14 @@
   "lang": "BN",
   "titleBN": "সঠিক নাম শনাক্তকরণ",
   "titleEN": "Identification of correct name",
-  "bgImage": {
-    "src": "images/bg_scene.jpg",
+  "graphic": {
+    "src": "assets/images/object.png",
     "altBN": "",
     "altEN": "",
-    "scale": 0.5,
-    "name": "bg_scene"
+    "scale": 0.9,
+    "name": "bg_scene",
+    "graphicPosX": 1050,
+    "graphicPosY": 300
   },
   "padContainerVerticalPos": 30,
 
@@ -96,33 +98,33 @@
   "dropZone":[
     {
       "id": 1,
-      "x":600,
-      "y":-350
-    },
-    {
-      "id": 2,
-      "x":600,
+      "x":-30,
       "y":-250
     },
     {
+      "id": 2,
+      "x":-58,
+      "y":-120
+    },
+    {
       "id": 3,
-      "x":600,
-      "y":-150
+      "x":-55,
+      "y":-20
     },
     {
       "id": 4,
-      "x":600,
-      "y":-50
+      "x":-57,
+      "y":70
     },
     {
       "id": 5,
-      "x":600,
-      "y":50
+      "x":-60,
+      "y":170
     },
     {
       "id": 6,
-      "x":600,
-      "y":150
+      "x":-52,
+      "y":270
     }
   ]
 }
