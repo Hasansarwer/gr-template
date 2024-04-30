@@ -38,77 +38,83 @@ function ready() {
             });
     };
 
+  let createHittestLogic = () => {
+    fetch("data.json")
+        .then((response) => response.json())
+        .then((data) => {
+            data.dropZone.forEach((dropZoneData, index) => {
+                // Create a drop zone rectangle with an id property
+                let dropZone = new Rectangle({
+                    width: 300,
+                    height: 70,
+                    corner: 20,
+                    backgroundColor: "white",
+                    borderWidth: 2,
+                    borderColor: "black",
+                    shadowBlur: 30,
+                });
+                
+                //storing assigned id to dropZone
+                dropZone.id = dropZoneData.id;
+            
+                let verticalGap = 50;
+                let yPos = -350 + index * (70 + verticalGap);
+            
+                dropZone.center().mov(600, yPos);
+            
+                // Push each dropZone to the dropZones array
+                dropZones.push(dropZone);
+            });
 
-    let createDropZone = () => {
-        fetch("data.json")
-            .then((response) => response.json())
-            .then((data) => {
-                data.dropZone.forEach((dropZoneData, index) => {
-                    let dropZone = new Rectangle({
-                        width: 300,
-                        height: 70,
-                        corner: 20,
-                        backgroundColor: "white",
-                        borderWidth: 2,
-                        borderColor: "black",
-                        shadowBlur: 30,
+            // Iterate over each answer pad
+            data.answerSet.forEach((answer, index) => {
+                let ansPad = new Button({
+                    width: 300,
+                    height: 70,
+                    corner: 20,
+                    backgroundColor: answer.padColor,
+                    rollBackgroundColor: answer.padHoverColor,
+                    rollColor: answer.padHoverTextColor,
+                    label: answer.innerContentBN,
+                    color: answer.padTextColor,
+                    shadowBlur: 30,
+                    shadowColor: answer.padShadowColor,
+                    borderWidth: answer.padBorderWidth,
+                    borderColor: answer.padBorderColor,
+                }).drag();
+
+                ansPad.label.size = 20;
+
+                let verticalGap = 20 * data.padGap;
+                let yPos = -350 + index * (70 + verticalGap);
+
+                ansPad.center().mov(-600, yPos);
+
+                //checking which answer pad is dropped on which drop zone
+                ansPad.on("click", () => {
+                    dropZones.forEach((dropZoneData) => {
+                        if (ansPad.hitTestRect(dropZoneData)) {
+                          if(answer.id === dropZoneData.id){
+                           console.log("Correct Answer");
+                          }
+                            else{
+                                console.log("Wrong Answer");
+                            }
+                        }
                     });
-
-                    let verticalGap = 50;
-                    let yPos = -350 + index * (70 + verticalGap);
-
-                    dropZone.center().mov(600, yPos);
-
-                    // Push drop zone to the array
-
-                    dropZones.push(dropZone);
                 });
+                
             });
-    };
+        });
+};
 
-
-    let createAnswerPad = () => {
-        fetch("data.json")
-            .then((response) => response.json())
-            .then((data) => {
-                data.answerSet.forEach((answer, index) => {
-                    let ansPad = new Button({
-                        width: 300,
-                        height: 70,
-                        corner: 20,
-                        backgroundColor: answer.padColor,
-                        rollBackgroundColor: answer.padHoverColor,
-                        rollColor: answer.padHoverTextColor,
-                        label: answer.innerContentBN,
-                        color: answer.padTextColor,
-                        shadowBlur: 30,
-                        shadowColor: answer.padShadowColor,
-                        borderWidth: answer.padBorderWidth,
-                        borderColor: answer.padBorderColor,
-                    }).drag();
-    
-                    ansPad.label.size = 20;
-    
-                    let verticalGap = 20 * data.padGap;
-                    let yPos = -350 + index * (70 + verticalGap);
-    
-                    ansPad.center().mov(-600, yPos);
-    
-                    // Push answer pad to the array
-                    answerPads.push(ansPad);
-    
-                    // Add click event listener to each answer pad
-                });
-            });
-    };
     
 
 
     
 
     navbar();
-    createDropZone();
-    createAnswerPad();
+    createHittestLogic();
 
   
     // checkAnswer();
