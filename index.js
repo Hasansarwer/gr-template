@@ -93,7 +93,7 @@ function ready() {
         });
 
         // Iterate over each answer pad
-        data.answerSet.forEach((answer, index) => {
+        data.answerSet.forEach((answer) => {
           let ansPad = new Button({
             width: 300,
             height: 70,
@@ -126,6 +126,25 @@ function ready() {
                     time: 0.5,
                     ease: "quadIn",
                   });
+                  let emitter = new Emitter({
+                    obj:new Circle(5, [green,orange,yellow,pink,blue,purple]),
+                    interval:0.0001,
+                    life:0.02,
+                    force:3.5,
+                    gravity:10.5,
+                    wind:0.7,
+                    warm:true,
+                    width:1,
+                    height:1,
+                    poolMin:100,
+                    sinkForce:200,
+                }).center().pos(dropZoneData.x+150, dropZoneData.y+20);
+        
+                //after 1 sec remove emitter
+                setTimeout(() => {
+                    emitter.removeFrom(Frame.stage);
+                    
+                }, 2000);
                 } else {
                   ansPad.animate({
                     target: ansPad,
