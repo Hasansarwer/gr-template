@@ -7,9 +7,9 @@
     "src": "assets/images/object.png",
     "altBN": "",
     "altEN": "",
-    "scale": 0.9,
+    "scale": 1.8,
     "name": "bg_scene",
-    "graphicPosX": 1050,
+    "graphicPosX": 800,
     "graphicPosY": 300
   },
   "padContainerVerticalPos": 30,
@@ -22,7 +22,7 @@
       "padHoverColor": "#EDEADE",
       "padHoverTextColor": "black",
       "padTextColor": "black",
-      "padShadowColor": "black",
+      "padShadowColor": "pink",
       "padBorderWidth": 0,
       "padBorderColor": "black",
       "innerContentBN": "বহিস্তর",
@@ -35,7 +35,7 @@
       "padHoverColor": "#EDEADE",
       "padHoverTextColor": "black",
       "padTextColor": "black",
-      "padShadowColor": "black",
+      "padShadowColor": "pink",
       "padBorderWidth": 0,
       "padBorderColor": "black",
       "innerContentBN": "অন্তস্তর",
@@ -48,7 +48,7 @@
       "padHoverColor": "#EDEADE",
       "padHoverTextColor": "black",
       "padTextColor": "black",
-      "padShadowColor": "black",
+      "padShadowColor": "pink",
       "padBorderWidth": 0,
       "padBorderColor": "black",
       "innerContentBN": "লুমেন",
@@ -61,7 +61,7 @@
       "padHoverColor": "#EDEADE",
       "padHoverTextColor": "black",
       "padTextColor": "black",
-      "padShadowColor": "black",
+      "padShadowColor": "pink",
       "padBorderWidth": 0,
       "padBorderColor": "black",
       "innerContentBN": "গ্রানাম",
@@ -74,7 +74,7 @@
       "padHoverColor": "#EDEADE",
       "padHoverTextColor": "black",
       "padTextColor": "black",
-      "padShadowColor": "black",
+      "padShadowColor": "pink",
       "padBorderWidth": 0,
       "padBorderColor": "black",
       "innerContentBN": "স্ট্রোমা",
@@ -87,7 +87,7 @@
       "padHoverColor": "#EDEADE",
       "padHoverTextColor": "black",
       "padTextColor": "black",
-      "padShadowColor": "black",
+      "padShadowColor": "pink",
       "padBorderWidth": 0,
       "padBorderColor": "black",
       "innerContentBN": "থাইলাকয়েড",
@@ -95,36 +95,42 @@
     }
   ],
 
-  "dropZone":[
+  "dropZone": [
     {
       "id": 1,
-      "x":-30,
-      "y":-250
+      "x": 450,
+      "y": -180,
+      "scale":0.9
     },
     {
       "id": 2,
-      "x":-58,
-      "y":-120
+      "x": 200,
+      "y": -100,
+      "scale": 0.5
     },
     {
       "id": 3,
-      "x":-55,
-      "y":-20
+      "x": 200,
+      "y": 100,
+      "scale":0.5
     },
     {
       "id": 4,
-      "x":-57,
-      "y":70
+      "x": 660,
+      "y": 295,
+      "scale": 0.5
     },
     {
       "id": 5,
-      "x":-60,
-      "y":170
+      "x": 690,
+      "y": 100,
+      "scale": 0.6
     },
     {
       "id": 6,
-      "x":-52,
-      "y":270
+      "x": 500,
+      "y": 230,
+      "scale":0.7
     }
   ]
 }

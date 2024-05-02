@@ -6,7 +6,7 @@ new Frame(
   FIT,
   1920,
   1080,
-  "#d1d5e6",
+  "#333",
   "#333",
   ready,
   "assets/",
@@ -77,15 +77,20 @@ function ready() {
             width: 300,
             height: 70,
             corner: 20,
-            backgroundColor: "white",
-            borderWidth: 2,
+            color: "black",
+            borderWidth: 1,
             borderColor: "black",
-            shadowBlur: 30,
+            shadowBlur: 0,
           });
+
+          dropZone.alpha = 0.3;
+          
+          dropZone.sca(`${dropZoneData.scale}`);
 
           //storing assigned id to dropZone
           dropZone.id = dropZoneData.id;
 
+        
           // let verticalGap = 50;
           // let yPos = -350 + index * (70 + verticalGap);
 
@@ -106,13 +111,14 @@ function ready() {
             rollColor: answer.padHoverTextColor,
             label: answer.innerContentBN,
             color: answer.padTextColor,
-            shadowBlur: 30,
+            shadowBlur: 20,
             shadowColor: answer.padShadowColor,
             borderWidth: answer.padBorderWidth,
             borderColor: answer.padBorderColor,
           }).drag();
 
           ansPad.label.size = 20;
+          
 
           let verticalGap = 20 * data.padContainerVerticalPos;
           let yPos = answer.padPosY + verticalGap;
@@ -123,15 +129,30 @@ function ready() {
             dropZones.forEach((dropZoneData) => {
               if (ansPad.hitTestRect(dropZoneData)) {
                 if (answer.id === dropZoneData.id) {
-                   
+   
                     correctSound.play();
 
                   ansPad.animate({
                     target: ansPad,
-                    props: { x: dropZoneData.x, y: dropZoneData.y },
+                    props: { x: dropZoneData.x, y: dropZoneData.y},
                     time: 0.5,
                     ease: "quadIn",
                   });
+                  
+                  //remove event listener after dropping the answer pad
+                  //check if the ansPad is its initial position
+
+                
+                    ansPad.removeAllEventListeners();
+                  
+                  //ansPad scaling animation
+                  ansPad.animate({
+                    target: ansPad,
+                    props: { scale: dropZoneData.scale/1.01},
+                    time: 0.5,
+                    ease: "quadIn",
+                  });
+
                   let emitter = new Emitter({
                     obj:new Circle(5, [green,orange,yellow,pink,blue,purple]),
                     interval:0.0001,
@@ -145,13 +166,19 @@ function ready() {
                     poolMin:100,
                     sinkForce:200,
                 }).center().pos(dropZoneData.x+150, dropZoneData.y+20);
-        
+                
                 //after 1 sec remove emitter
                 setTimeout(() => {
                     emitter.removeFrom(Frame.stage);
                     
                 }, 1000);
                 } else {
+                  dropZoneData.color = "red";
+                  dropZoneData.animate({
+                    props: { alpha:0.8 }, // Change color to red
+                    time: 0.5,
+                    ease: "quadIn",
+                });
                   ansPad.animate({
                     target: ansPad,
                     props: { x: 100, y: yPos },
@@ -159,6 +186,8 @@ function ready() {
                     ease: "quadIn",
                   });
                     wrongSound.play();
+
+                   
                 }
               }
             });
@@ -168,7 +197,8 @@ function ready() {
   };
 
   navbar();
-  createHittestLogic();
   imageRenderer();
+  createHittestLogic();
+
 
 }
