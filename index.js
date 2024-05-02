@@ -118,6 +118,7 @@ function ready() {
           }).drag();
 
           ansPad.label.size = 20;
+          ansPad.label.font = "Siyam Rupali";
           
 
           let verticalGap = 20 * data.padContainerVerticalPos;
@@ -173,17 +174,12 @@ function ready() {
                     
                 }, 1000);
                 } else {
-                  dropZoneData.color = "red";
-                  dropZoneData.animate({
-                    props: { alpha:0.8 }, // Change color to red
-                    time: 0.5,
-                    ease: "quadIn",
-                });
+                
                   ansPad.animate({
                     target: ansPad,
                     props: { x: 100, y: yPos },
                     time: 0.5,
-                    ease: "quadIn",
+                    ease: "Bounce",
                   });
                     wrongSound.play();
 
