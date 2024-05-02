@@ -190,11 +190,40 @@ function ready() {
           });
         });
       });
-  };
+
+  }
+
+function restartLogic() {
+
+  const restartButton = new Button({
+    label: "",
+    width: 100,
+    height: 100,
+    backgroundColor: "lime",
+    rollBackgroundColor: "limegreen",
+    borderWidth: 0,
+    gradient: 0.4,
+    corner: 50,
+  })
+    .center()
+    .mov(870, 460);
+
+    
+
+    const pic = new Pic("assets/images/restart.png").sca(0.15).center(restartButton);
+    pic.rotation = 60;
+
+    restartButton.on("click", () => {
+        location.reload();
+    });
+  
+  }
 
   navbar();
   imageRenderer();
   createHittestLogic();
+  restartLogic();
 
+  
 
 }
