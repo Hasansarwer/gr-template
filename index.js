@@ -1,4 +1,4 @@
-import zim from "https://zimjs.org/cdn/016/zim";
+import zim from "/zim.js";
 
 const { Frame, Circle, Button, Label, Rectangle, GlowEffect, Pic } = zim;
 
