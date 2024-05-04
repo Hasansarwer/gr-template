@@ -14,6 +14,8 @@ new Frame(
 );
 
 function ready() {
+  //add a bg image 1920x1080
+  const bg = new Pic("assets/images/bg.png").center();
   let dropZones = []; // array to store dropZones id
 
   let correctSound = new Audio("assets/sounds/correctSound.mp3");
@@ -23,9 +25,9 @@ function ready() {
     fetch("data.json")
       .then((response) => response.json())
       .then((data) => {
-        let rect = new Rectangle(1920, 100, "black");
+        let rect = new Rectangle(1920, 80, "black");
         rect.alpha = 0.5;
-        rect.center().mov(0, -490);
+        rect.center().mov(25, -470);
 
         let text = new Label({
           text: `${data.titleBN}`,
@@ -36,7 +38,7 @@ function ready() {
 
         let rect2 = new Rectangle(1920, 30, "#f88379");
         rect2.alpha = 0.8;
-        rect2.center().mov(0, -425);
+        rect2.center().mov(25, -425);
 
         let text2 = new Label({
           text: "বাম দিকের উত্তরগুলো ড্র্যাগ করে সঠিক জায়গায় বসাও➡️➡️➡️",
@@ -44,11 +46,11 @@ function ready() {
           font: "Siyam Rupali",
           color: "white",
         });
-        text2.center(rect2).pos(1400, 5);
+        text2.center(rect2).pos(1200, 5);
 
         text2.animate({
           target: text2,
-          props: { x: 0 },
+          props: { x: 100 },
           time: 10,
           loop: true,
           rewind: true,
@@ -120,6 +122,7 @@ function ready() {
           ansPad.label.size = 20;
           ansPad.label.font = "Siyam Rupali";
           
+          
 
           let verticalGap = 20 * data.padContainerVerticalPos;
           let yPos = answer.padPosY + verticalGap;
@@ -132,7 +135,8 @@ function ready() {
                 if (answer.id === dropZoneData.id) {
    
                     correctSound.play();
-
+                    //correct sound pause
+                  
                   ansPad.animate({
                     target: ansPad,
                     props: { x: dropZoneData.x, y: dropZoneData.y},
