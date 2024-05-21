@@ -22,25 +22,25 @@ function ready() {
     .then((data) => {
       const lang = data.lang;
       document.title = data.title[lang];
-      setUpStage(data, lang);
-      createHittest(data.grs[0], lang);
+      // setRecap(data); // set recap data
+      createReCap(data.grs[0], data.title, lang, correctSound, wrongSound);
       reStart();
     });
 }
 
-  function setUpStage(data, lang) {
+  function setUpStage(title) {
     let rect = new Rectangle(1920, 80, "black");
     rect.alpha = 0.5;
-    rect.center().mov(25, -470);
+    rect.center().mov(0, -470);
     let text = new Label({
-      text: `${data.title[lang]}`,
+      text: title,
       size: 50,
       color: "white",
     });
     text.center(rect);
     let rect2 = new Rectangle(1920, 30, "#f88379");
     rect2.alpha = 0.8;
-    rect2.center().mov(25, -425);
+    rect2.center().mov(0, -415);
 
     let text2 = new Label({
     text: "বাম দিকের উত্তরগুলো ড্র্যাগ করে সঠিক জায়গায় বসাও➡️➡️➡️",
@@ -59,19 +59,20 @@ function ready() {
     });
   }
 
-  function createHittest(gr, lang) {
-    const image = new Pic(`${gr.bg.src}`).center();
+  function createReCap(gr, title, lang, correctSound, wrongSound) {
+    const bg = new Pic(`${gr.bg.src}`).center();
+    const grTitle = title[lang] + ' ' + gr.title[lang];
+    setUpStage(grTitle, lang);
     const dropZones = []; // array to store dropZones objects
     const answerPads = []; // array to store answerPads objects
     gr.answers.forEach((dropZoneData, index) => {
       // Create a drop zone rectangle with an id property
-      let dropZone = new Rectangle({width: 300, height: 70, corner: 20, color: "black", borderWidth: 1, borderColor: "black", shadowBlur: 0});
+      let dropZone = new Rectangle({width: 300, height: 80, corner: 20, color: "black", borderWidth: 1, borderColor: "black", shadowBlur: 0});
       dropZone.alpha =0.3;
-      dropZone.sca(`${dropZoneData.scale}`);
+      // dropZone.sca(`${dropZoneData.scale}`);
       //storing assigned id to dropZone
       dropZone.id = dropZoneData.id;
-        
-      dropZone.center().mov(dropZoneData.x, dropZoneData.y);
+      dropZone.center().mov(dropZoneData.x-980, dropZoneData.y-540);
       dropZones.push(dropZone); // Push each dropZone to the dropZones array
     });
     // Iterate over each answer pad
@@ -82,12 +83,14 @@ function ready() {
       ansPad.label.size = 20;
       ansPad.label.font = "Siyam Rupali";
           
-      ansPad.center().pos(100, 300);
+      // ansPad.pos(100, 300);
       // ansPad.isVisible = true;
       answerPads.push(ansPad); // Push each answer pad to the answerPads array
       ansPad.on("click", () => {   //checking which answer pad is dropped on which drop zone
+        console.log("click");
             dropZones.forEach((dropZoneData) => {
               if (ansPad.hitTestRect(dropZoneData)) {
+                console.log("hit");
                 if (answer.id === dropZoneData.id) {
                     correctSound.play();                   //correct sound pause
                   ansPad.animate({
@@ -112,17 +115,34 @@ function ready() {
                 }else {
                   ansPad.animate({
                     target: ansPad,
-                    props: { x: 100, y: yPos },
+                    props: { x: 100, y: 300 },
                     time: 0.5,
                     ease: "Bounce",
                   });
                     wrongSound.play(); 
                 }
-              }
+              }else{
+                ansPad.animate({
+                target: ansPad,
+                props: { x: 100, y: 300 },
+                time: 0.5,
+                ease: "Bounce",
+              });}
             });
-          });
-        });
+      });
+    });
+  pickRandom(answerPads, dropZones);
 
+  }
+
+  function pickRandom(answerPads, dropZones) {
+    // Shuffle the answer pads array
+    let shuffledAnswerPads = answerPads.sort(() => Math.random() - 0.5);
+    // Iterate over each answer pad
+    shuffledAnswerPads.forEach((answerPad, index) => {
+      // Set the position of the answer pad
+      answerPad.pos(100 + index * 300, 300);
+    });
   }
 
 function reStart() {

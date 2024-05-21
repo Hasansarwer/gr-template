@@ -2,217 +2,88 @@
   "code": "7S04GR46",
   "lang": "BN",
   "title": {
-    "BN": "সপ্তম অধ্যায় গ্রাফিক্স রিকেপ",
-    "EN": "Chapter Seven Graphics Recap"
+    "BN": "গ্রাফিক্স রিকেপ",
+    "EN": "Graphics Recap"
   },
   "grs": [
     {
-      "bg": {
-        "src": "assets/images/gr7046bg.png",
-        "alt": {
-          "BN": "পটভূমি",
-          "EN": "background"
-        },
-        "scale": 1.8,
-        "name": "bg_scene"
+      "title":{
+        "BN":"ক্লোরোপ্লাস্ট",
+        "EN":"Chloroplast"
       },
-      "element": {
+      "bg": {
         "src": "assets/images/chloroplast.png",
         "alt": {
           "BN": "ক্লোরোপ্লাস্ট",
-          "EN": "Chloroplast"
+          "EN": "chloroplast"
         },
-        "scale": 1.8,
-        "name": "element",
-        "x":800,
-        "y":300
+        "name": "bg_scene"
       },
       "answers":[
         {
-          "id": 0,
+          "id": 1,
           "answer": {
             "BN": "বহিস্তর",
             "EN": "Extensive Area"
           },
-          "x": 450,
-          "y": -180,
-          "scale": 0.9
-        },
-        {
-          "id": 1,
-          "answer": {
-            "BN": "অন্তস্তর",
-            "EN": "Intensive Area"
-          },
-          "x": 200,
-          "y": -100,
-          "scale": 0.7
+          "x": 954,
+          "y": 280,
+          "scale": 1
         },
         {
           "id": 2,
           "answer": {
-            "BN": "লুমেন",
-            "EN": "Lumen"
+            "BN": "অন্তস্তর",
+            "EN": "Intensive Area"
           },
-          "x": 200,
-          "y": 100,
-          "scale": 0.5
+          "x": 738,
+          "y": 386,
+          "scale": 1
         },
         {
           "id": 3,
           "answer": {
-            "BN": "গ্রানাম",
-            "EN": "Granum"
+            "BN": "লুমেন",
+            "EN": "Lumen"
           },
-          "x": 660,
-          "y": 295,
-          "scale": 0.5
+          "x": 750,
+          "y": 501,
+          "scale": 1
         },
         {
           "id": 4,
           "answer": {
-            "BN": "স্ট্রোমা",
-            "EN": "Stroma"
+            "BN": "গ্রানাম",
+            "EN": "Granum"
           },
           "x": 690,
-          "y": 100,
-          "scale": 0.6
+          "y": 715,
+          "scale": 1
         },
         {
           "id": 5,
           "answer": {
+            "BN": "স্ট্রোমা",
+            "EN": "Stroma"
+          },
+          "x": 1170,
+          "y": 760,
+          "scale": 1
+        },
+        {
+          "id": 6,
+          "answer": {
             "BN": "থাইলাকয়েড",
             "EN": "Thylakoid"
           },
-          "x": 500,
-          "y": 230,
-          "scale": 0.7
+          "x": 1637,
+          "y": 809,
+          "scale": 1
         }
       ]
     }
 
-  ],
- 
-  "padContainerVerticalPos": 30,
-
-
-  "answerSet": [
-    {
-      "id": 1,
-      "padPosY": -350,
-      "padColor": "#FAF9F6",
-      "padHoverColor": "#EDEADE",
-      "padHoverTextColor": "black",
-      "padTextColor": "black",
-      "padShadowColor": "pink",
-      "padBorderWidth": 0,
-      "padBorderColor": "black",
-      "innerContentBN": "বহিস্তর",
-      "innerContentEN": "Extensive Area"
-    },
-    {
-      "id": 2,
-      "padPosY": -250,
-      "padColor": "#FAF9F6",
-      "padHoverColor": "#EDEADE",
-      "padHoverTextColor": "black",
-      "padTextColor": "black",
-      "padShadowColor": "pink",
-      "padBorderWidth": 0,
-      "padBorderColor": "black",
-      "innerContentBN": "অন্তস্তর",
-      "innerContentEN": "Intensive Area"
-    },
-    {
-      "id": 3,
-      "padPosY": -150,
-      "padColor": "#FAF9F6",
-      "padHoverColor": "#EDEADE",
-      "padHoverTextColor": "black",
-      "padTextColor": "black",
-      "padShadowColor": "pink",
-      "padBorderWidth": 0,
-      "padBorderColor": "black",
-      "innerContentBN": "লুমেন",
-      "innerContentEN": "Lumen"
-    },
-    {
-      "id": 4,
-      "padPosY": -50,
-      "padColor": "#FAF9F6",
-      "padHoverColor": "#EDEADE",
-      "padHoverTextColor": "black",
-      "padTextColor": "black",
-      "padShadowColor": "pink",
-      "padBorderWidth": 0,
-      "padBorderColor": "black",
-      "innerContentBN": "গ্রানাম",
-      "innerContentEN": "Granum"
-    },
-    {
-      "id": 5,
-      "padPosY": 50,
-      "padColor": "#FAF9F6",
-      "padHoverColor": "#EDEADE",
-      "padHoverTextColor": "black",
-      "padTextColor": "black",
-      "padShadowColor": "pink",
-      "padBorderWidth": 0,
-      "padBorderColor": "black",
-      "innerContentBN": "স্ট্রোমা",
-      "innerContentEN": "Stroma"
-    },
-    {
-      "id": 6,
-      "padPosY": 150,
-      "padColor": "#FAF9F6",
-      "padHoverColor": "#EDEADE",
-      "padHoverTextColor": "black",
-      "padTextColor": "black",
-      "padShadowColor": "pink",
-      "padBorderWidth": 0,
-      "padBorderColor": "black",
-      "innerContentBN": "থাইলাকয়েড",
-      "innerContentEN": "Thylakoid"
-    }
-  ],
-
-  "dropZone": [
-    {
-      "id": 1,
-      "x": 450,
-      "y": -180,
-      "scale":0.9
-    },
-    {
-      "id": 2,
-      "x": 200,
-      "y": -100,
-      "scale": 0.7
-    },
-    {
-      "id": 3,
-      "x": 200,
-      "y": 100,
-      "scale":0.5
-    },
-    {
-      "id": 4,
-      "x": 660,
-      "y": 295,
-      "scale": 0.5
-    },
-    {
-      "id": 5,
-      "x": 690,
-      "y": 100,
-      "scale": 0.6
-    },
-    {
-      "id": 6,
-      "x": 500,
-      "y": 230,
-      "scale":0.7
-    }
   ]
+
+  
 }
