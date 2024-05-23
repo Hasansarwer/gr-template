@@ -81,6 +81,81 @@
           "scale": 1
         }
       ]
+    },{
+      "title":{
+        "BN":"ক্লোরোপ্লাস্ট",
+        "EN":"Chloroplast"
+      },
+      "bg": {
+        "src": "assets/images/chloroplast.png",
+        "alt": {
+          "BN": "ক্লোরোপ্লাস্ট",
+          "EN": "chloroplast"
+        },
+        "name": "bg_scene"
+      },
+      "answers":[
+        {
+          "id": 1,
+          "answer": {
+            "BN": "বহিস্তর",
+            "EN": "Extensive Area"
+          },
+          "x": 954,
+          "y": 280,
+          "scale": 1
+        },
+        {
+          "id": 2,
+          "answer": {
+            "BN": "অন্তস্তর",
+            "EN": "Intensive Area"
+          },
+          "x": 738,
+          "y": 386,
+          "scale": 1
+        },
+        {
+          "id": 3,
+          "answer": {
+            "BN": "লুমেন",
+            "EN": "Lumen"
+          },
+          "x": 750,
+          "y": 501,
+          "scale": 1
+        },
+        {
+          "id": 4,
+          "answer": {
+            "BN": "গ্রানাম",
+            "EN": "Granum"
+          },
+          "x": 690,
+          "y": 715,
+          "scale": 1
+        },
+        {
+          "id": 5,
+          "answer": {
+            "BN": "স্ট্রোমা",
+            "EN": "Stroma"
+          },
+          "x": 1170,
+          "y": 760,
+          "scale": 1
+        },
+        {
+          "id": 6,
+          "answer": {
+            "BN": "থাইলাকয়েড",
+            "EN": "Thylakoid"
+          },
+          "x": 1637,
+          "y": 809,
+          "scale": 1
+        }
+      ]
     }
 
   ]
