@@ -1,11 +1,276 @@
 {
   "code": "7S04GR46",
   "lang": "BN",
+  "class": "7",
+  "subject": "Science",
+  "chapterNo": 4,
+  "chapterName": {
+    "BN": "কোষবিজ্ঞান",
+    "EN": "Cell Biology"
+  },
   "title": {
     "BN": "গ্রাফিক্স রিকেপ",
     "EN": "Graphics Recap"
   },
   "grs": [
+    {
+      "title":{
+        "BN":"ক্লোরোপ্লাস্ট",
+        "EN":"Chloroplast"
+      },
+      "bg": {
+        "src": "assets/images/cell.png",
+        "alt": {
+          "BN": "কোষ",
+          "EN": "cell"
+        },
+        "name": "bg_scene"
+      },
+      "answers":[
+        {
+          "id": 1,
+          "answer": {
+            "BN": "ক্লোরোপ্লাস্ট",
+            "EN": "Chloroplast"
+          },
+          "x": 586,
+          "y": 280,
+          "scale": 1
+        },
+        {
+          "id": 2,
+          "answer": {
+            "BN": "কোষ প্রাচীর",
+            "EN": "Cell Wall"
+          },
+          "x": 565,
+          "y": 560,
+          "scale": 1
+        },
+        {
+          "id": 3,
+          "answer": {
+            "BN": "কোষ গহ্বর",
+            "EN": "Cell cavity"
+          },
+          "x": 565,
+          "y": 422,
+          "scale": 1
+        },
+        {
+          "id": 4,
+          "answer": {
+            "BN": "উদ্ভিদকোষ",
+            "EN": "Plant Cell"
+          },
+          "x": 905,
+          "y": 843 ,
+          "scale": 1
+        },
+        {
+          "id": 5,
+          "answer": {
+            "BN": "লাইসোসোম",
+            "EN": "Lysosome"
+          },
+          "x": 1422,
+          "y": 180,
+          "scale": 1
+        },
+        {
+          "id": 6,
+          "answer": {
+            "BN": "গলজি বডি",
+            "EN": "Golgi Body"
+          },
+          "x": 1272,
+          "y": 285,
+          "scale": 1
+        },
+        {
+          "id": 7,
+          "answer": {
+            "BN": "কোষ ঝিল্লি",
+            "EN": "Cell Membrane"
+          },
+          "x": 1272,
+          "y": 376,
+          "scale": 1
+        },
+        {
+          "id": 8,
+          "answer": {
+            "BN": "সাইটোপ্লাজম",
+            "EN": "Cytoplasm"
+          },
+          "x": 1272,
+          "y": 465,
+          "scale": 1
+        },
+        {
+          "id": 9,
+          "answer": {
+            "BN": "নিউক্লিয়াস",
+            "EN": "Nucleus"
+          },
+          "x": 1272,
+          "y": 555,
+          "scale": 1
+        },
+        {
+          "id": 10,
+          "answer":{
+            "BN": "আন্তঃপ্লাজমীয় জালিকা",
+            "EN": "Endoplasmic Reticulum"
+          },
+          "x": 1272,
+          "y": 645,
+          "scale": 1
+        },
+        {
+          "id": 11,
+          "answer": {
+            "BN": "মাইটোকন্ড্রিয়া",
+            "EN": "Mitochondria"
+          },
+          "x": 1272,
+          "y": 730,
+          "scale": 1
+        },
+        {
+          "id": 12,
+          "answer": {
+            "BN": "সেন্ট্রোসোম",
+            "EN": "Centrosome"
+          },
+          "x": 1316,
+          "y": 841,
+          "scale": 1
+        },
+        {
+          "id": 13,
+          "answer":{
+            "BN": "প্রাণিকোষ",
+            "EN": "Animal Cell"
+          },
+          "x": 1657,
+          "y": 841,
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "title":{
+        "BN":"মাইটোকন্ড্রিয়া",
+        "EN":"Mitochondria"
+      },
+      "bg": {
+        "src": "assets/images/mitochondria.png",
+        "alt": {
+          "BN": "মাইটোকন্ড্রিয়া",
+          "EN": "Mitochondria"
+        },
+        "name": "bg_scene"
+      },
+      "answers":[
+        {
+          "id": 1,
+          "answer": {
+            "BN": "ক্রিস্টি",
+            "EN": "Cristae"
+          },
+          "x": 686,
+          "y": 544,
+          "scale": 1
+        },
+        {
+          "id": 2,
+          "answer": {
+            "BN": "ম্যাট্রিক্স",
+            "EN": "Matrix"
+          },
+          "x": 799,
+          "y": 640,
+          "scale": 1
+        },
+        {
+          "id": 3,
+          "answer": {
+            "BN": "অভ্যন্তরীণ ঝিল্লি",
+            "EN": "Inner Membrane"
+          },
+          "x": 861,
+          "y": 735,
+          "scale": 1
+        },
+        {
+          "id": 4,
+          "answer": {
+            "BN": "বাহ্যিক ঝিল্লি",
+            "EN": "Outer Membrane"
+          },
+          "x": 936,
+          "y": 831,
+          "scale": 1
+        },
+        {
+          "id": 5,
+          "answer": {
+            "BN": "মাইটোকন্ড্রিয়া",
+            "EN": "Mitochondria"
+          },
+          "x": 1668,
+          "y": 678,
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "title":{
+        "BN":"প্লাস্টিড",
+        "EN":"Plastid"
+      },
+      "bg": {
+        "src": "assets/images/plastid.png",
+        "alt": {
+          "BN": "প্লাস্টিড",
+          "EN": "Plastid"
+        },
+        "name": "bg_scene"
+      },
+      "answers":[
+        {
+          "id": 1,
+          "answer": {
+            "BN": "ক্রোমোপ্লাস্ট",
+            "EN": "Chromoplast"
+          },
+          "x": 1059,
+          "y": 468,
+          "scale": 1
+        },
+        {
+          "id": 2,
+          "answer": {
+            "BN": "ক্লোরোপ্লাস্ট",
+            "EN": "Chloroplast"
+          },
+          "x": 1537,
+          "y": 468,
+          "scale": 1
+        },
+        {
+          "id": 3,
+          "answer": {
+            "BN": "লিউকোপ্লাস্ট",
+            "EN": "Leucoplast"
+          },
+          "x": 1267,
+          "y": 956,
+          "scale": 1
+        }
+      ]
+    },
     {
       "title":{
         "BN":"ক্লোরোপ্লাস্ট",
@@ -81,16 +346,17 @@
           "scale": 1
         }
       ]
-    },{
+    },
+    {
       "title":{
-        "BN":"ক্লোরোপ্লাস্ট",
-        "EN":"Chloroplast"
+        "BN":"ক্যান্সার কোষ",
+        "EN":"Cancer Cell"
       },
       "bg": {
-        "src": "assets/images/chloroplast.png",
+        "src": "assets/images/cancer.png",
         "alt": {
-          "BN": "ক্লোরোপ্লাস্ট",
-          "EN": "chloroplast"
+          "BN": "ক্যান্সার কোষ",
+          "EN": "Cancer Cell"
         },
         "name": "bg_scene"
       },
@@ -98,61 +364,31 @@
         {
           "id": 1,
           "answer": {
-            "BN": "বহিস্তর",
-            "EN": "Extensive Area"
+            "BN": "টিউমার গঠন",
+            "EN": "Tumor Formation"
           },
-          "x": 954,
-          "y": 280,
+          "x": 1250,
+          "y": 212,
           "scale": 1
         },
         {
           "id": 2,
           "answer": {
-            "BN": "অন্তস্তর",
-            "EN": "Intensive Area"
+            "BN": "স্বাভাবিক কোষ",
+            "EN": "Normal Cell"
           },
-          "x": 738,
-          "y": 386,
+          "x": 580,
+          "y": 618,
           "scale": 1
         },
         {
           "id": 3,
           "answer": {
-            "BN": "লুমেন",
-            "EN": "Lumen"
+            "BN": "ক্যান্সার কোষ বিভাজন",
+            "EN": "Cancer Cell Division"
           },
-          "x": 750,
-          "y": 501,
-          "scale": 1
-        },
-        {
-          "id": 4,
-          "answer": {
-            "BN": "গ্রানাম",
-            "EN": "Granum"
-          },
-          "x": 690,
-          "y": 715,
-          "scale": 1
-        },
-        {
-          "id": 5,
-          "answer": {
-            "BN": "স্ট্রোমা",
-            "EN": "Stroma"
-          },
-          "x": 1170,
-          "y": 760,
-          "scale": 1
-        },
-        {
-          "id": 6,
-          "answer": {
-            "BN": "থাইলাকয়েড",
-            "EN": "Thylakoid"
-          },
-          "x": 1637,
-          "y": 809,
+          "x": 1387,
+          "y": 888,
           "scale": 1
         }
       ]

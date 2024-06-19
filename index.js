@@ -2,6 +2,204 @@
 
 const { Frame, Circle, Button, Label, Rectangle, GlowEffect, Pic, Emitter } = zim;
 
+class Title{
+  constructor(title){
+    this.title = title;
+    this.createTitle(title);
+    this.setUpStage();
+  }
+
+  createTitle(title){
+    const rect = new Rectangle(1920, 80, "black");
+    rect.alpha = 0.5;
+    rect.center().mov(0, -470);
+    const text = new Label({text: title, size: 50, color: "white", font: "Noto Sans Bengali UI"});
+    text.center(rect);
+  }
+
+  updateTitle(title){
+    text.text = title;
+  }
+
+  setUpStage(){
+    let rect2 = new Rectangle(1920, 30, "#f88379");
+    rect2.alpha = 0.8;
+    rect2.center().mov(0, -415);
+
+    let text2 = new Label({
+    text: "বাম দিকের উত্তরগুলো ড্র্যাগ করে সঠিক জায়গায় বসাও➡️➡️➡️",
+    size: 20,
+    font: "Noto Sans Bengali UI",
+    color: "white",
+    });
+    text2.center(rect2).pos(1200, 5);
+
+    text2.animate({
+      target: text2,
+      props: { x: 100 },
+      time: 10,
+      loop: true,
+      rewind: true,
+    });
+  }
+}
+class Recap{
+  constructor(grs, title, answers, lang, correctSound, wrongSound){
+    this.grs = grs;
+    this.title = title;
+    this.answers = answers;
+    this.lang = lang;
+    this.correctSound = correctSound;
+    this.wrongSound = wrongSound;
+    this.dropZones = [];
+    this.answerPads = [];
+    this.index = 0;
+    this.createRecap(this.grs, this.title, this.lang, this.correctSound, this.wrongSound);
+    // this.nextRecap(i, grs, title, lang, correctSound, wrongSound);
+    // this.previous(i, grs, title, lang, correctSound, wrongSound);
+    // this.reStart();
+  }
+
+  createRecap(grs, title, lang, correctSound, wrongSound){
+    const gr = grs[0];
+    const bg = new Pic(`${gr.bg.src}`).center();
+    const grTitle = title[lang] + ' ' + gr.title[lang];
+    const title = new Title(grTitle);
+    this.dropZones = this.createDropZones(gr.answers);
+    this.answerPads = this.createAnswerPads(gr.answers);
+    const shuffledAnswerPads = this.pickRandom(this.answerPads);
+    shuffledAnswerPads.forEach((answerPad, index) => {
+      answerPad.pos(100, 300);
+    });
+  }
+
+  updateRecap(i){
+    const gr = grs[i];
+    const bg = new Pic(`${gr.bg.src}`).center();
+    const grTitle = title[lang] + ' ' + gr.title[lang];
+    title.updateTitle(grTitle);
+    this.dropZones = this.createDropZones(gr.answers);
+    this.answerPads = this.createAnswerPads(gr.answers);
+    const shuffledAnswerPads = this.pickRandom(this.answerPads);
+    shuffledAnswerPads.forEach((answerPad, index) => {
+      answerPad.pos(100, 300);
+    });
+  }
+  
+  nextRecap(){
+    const nextButton = new Button({label: "Next", width: 100, height: 100, backgroundColor: "lime", rollBackgroundColor: "limegreen", borderWidth: 0, gradient: 0.4, corner: 50})
+      .center()
+      .mov(700, 460);
+      if(this.index === this.grs.length-1){
+        nextButton.visible = false;
+      }else {
+        nextButton.visible = true;
+      }
+      nextButton.on("click", () => {
+          if(this.index<this.grs.length-1){
+            this.index++;
+            this.updateRecap(this.index);
+          }
+      });
+    
+    }
+  }
+
+  pickRandom(answerPads){
+    return(answerPads.sort(() => Math.random() - 0.5));
+  }
+
+  createDropZones(answers){
+    const dropZones = [];
+    answers.forEach((dropZoneData, index) => {
+      let dropZone = new Rectangle({
+        width: 300,
+        height: 80,
+        corner: 20,
+        color: "black",
+        borderWidth: 1,
+        borderColor: "black",
+        shadowBlur: 0
+      });
+      dropZone.alpha = 0.3;
+      dropZone.id = dropZoneData.id;
+      dropZone.center().mov(dropZoneData.x - 980, dropZoneData.y - 540);
+      dropZones.push(dropZone);
+    });
+    return dropZones;
+  }
+  
+  createAnswerPads(answers){
+    const answerPads = [];
+    answers.forEach((answer) => {
+      let ansPad = new Button({
+        width: 300,
+        height: 80,
+        corner: 20,
+        backgroundColor: "#FAF9F6",
+        rollBackgroundColor: "#EDEADE",
+        rollColor: "black",
+        label: answer.answer[lang],
+        color: "black",
+        shadowBlur: 20,
+        shadowColor: "pink",
+        borderWidth: 0,
+        borderColor: "black"
+      }).drag();
+  
+      ansPad.label.size = 20;
+      ansPad.label.font = "Noto Sans Bengali UI";
+      ansPad.answered = false;
+      answerPads.push(ansPad);
+      ansPad.on("click", () => {
+        dropZones.forEach((dropZoneData) => {
+          if (ansPad.hitTestRect(dropZoneData)) {
+            if (answer.id === dropZoneData.id) {
+              ansPad.answered = true;
+              correctSound.play();
+              ansPad.animate({
+                target: ansPad,
+                props: { x: dropZoneData.x, y: dropZoneData.y },
+                time: 0.5,
+                ease: "quadIn",
+              });
+  
+              ansPad.removeAllEventListeners();
+  
+              let emitter = new Emitter({
+                obj: new Circle(5, [green, orange, yellow, pink, blue, purple]),
+                interval: 0.0001,
+                life: 0.02,
+                force: 3.5,
+                gravity: 10.5,
+                wind: 0.7,
+                warm: true,
+                width: 1,
+                height: 1,
+                poolMin: 100,
+                sinkForce: 200
+              }).center().pos(dropZoneData.x + 150, dropZoneData.y + 20);
+  
+              setTimeout(() => {
+                emitter.removeFrom(Frame.stage);
+              }, 1000);
+            } else {
+              ansPad.animate({
+                target: ansPad,
+                props: { x: 100, y: 300 },
+                time: 0.5,
+                ease: "Bounce",
+              });
+              wrongSound.play();
+            }
+          }
+        });
+      });
+    });
+    return answerPads;
+  }
+}
+
 new Frame(
   FIT,
   1920,
@@ -75,36 +273,7 @@ function next(i, grs, title, lang, correctSound, wrongSound) {
     
     }
 
-  function setUpStage(title) {
-    let rect = new Rectangle(1920, 80, "black");
-    rect.alpha = 0.5;
-    rect.center().mov(0, -470);
-    let text = new Label({
-      text: title,
-      size: 50,
-      color: "white",
-    });
-    text.center(rect);
-    let rect2 = new Rectangle(1920, 30, "#f88379");
-    rect2.alpha = 0.8;
-    rect2.center().mov(0, -415);
-
-    let text2 = new Label({
-    text: "বাম দিকের উত্তরগুলো ড্র্যাগ করে সঠিক জায়গায় বসাও➡️➡️➡️",
-    size: 20,
-    font: "Siyam Rupali",
-    color: "white",
-    });
-    text2.center(rect2).pos(1200, 5);
-
-    text2.animate({
-      target: text2,
-      props: { x: 100 },
-      time: 10,
-      loop: true,
-      rewind: true,
-    });
-  }
+  
 
   function createReCap(gr, title, lang, correctSound, wrongSound) {
     const bg = new Pic(`${gr.bg.src}`).center();
@@ -148,7 +317,7 @@ function next(i, grs, title, lang, correctSound, wrongSound) {
       }).drag();
   
       ansPad.label.size = 20;
-      ansPad.label.font = "Siyam Rupali";
+      ansPad.label.font = "Noto Sans Bengali UI";
       ansPad.answered = false;
       answerPads.push(ansPad); // Push each answer pad to the answerPads array
       ansPad.on("click", () => {   //checking which answer pad is dropped on which drop zone
